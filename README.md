@@ -43,3 +43,9 @@ https://doc.rust-jp.rs//
 
 シングルスレッドのWebサーバを構築する  
 https://doc.rust-jp.rs/book-ja/ch20-01-single-threaded.html
+
+## rustcで最軽量にビルド、objdump
+```
+rustc -C opt-level=0 -C debug_assertions=no -C prefer-dynamic -C strip=symbols plus.rs
+objdump -S -d plus
+```
